@@ -9,7 +9,7 @@ MAINTAINER Andrey Aleksandrov <alex.demion@gmail.com>
 # Environment variables:
 #------------------------------------------------------------------------------
 
-ENV PORTUS_VERSION="master" \
+ENV PORTUS_VERSION="v2.0" \
     NOKOGIRI_USE_SYSTEM_LIBRARIES="1" \
     CATALOG_CRON="5.minutes" \
     COMPOSE=1
