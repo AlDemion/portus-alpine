@@ -2,7 +2,7 @@
 # Set the base image for subsequent instructions:
 #------------------------------------------------------------------------------
 
-FROM alpine:3.5
+FROM alpine
 MAINTAINER Andrey Aleksandrov <alex.demion@gmail.com>
 
 #------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ RUN apk --no-cache add --update -t deps \
     && git checkout ${PORTUS_VERSION} \
     && mkdir /portus \
     && git archive ${PORTUS_VERSION} | tar -xC /portus \
-    && git rev-parse --short HEAD > /portus/VERSION
+    && git rev-parse --short HEAD > /portus/VERSION \
     && cd /portus \
     && sed -i 's/mysql2 (0.3.18)/mysql2 (0.4.4)/' Gemfile.lock \
     && bundle install --retry=3 \
